@@ -40,3 +40,11 @@ models:
     # Applies to all files under models/example/
     example:
       +materialized: table
+    00_raw:
+      materialized: view
+      schema: 00_raw
+      path: "00_raw"
+      +tags: 
+        - "raw"
+      +docs:
+        node_color: "Black"
