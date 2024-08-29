@@ -1,0 +1,29 @@
+version: 2
+
+sources:
+  - name: raw_data
+    database: dotted-stage-426709-n1
+    schema: raw_data
+    description: Sources brutes des données
+    tables:
+      - name: amenagements_cyclables
+        identifier: amenagements_cyclables
+        config:
+          tags:
+      - name: bornes_velibs_paris
+        identifier: bornes_velibs_paris
+        config:
+          tags:
+            - Paris
+            - Velib
+      - name: bornes_velov_lyon
+        identifier: bornes_velov_lyon
+        config:
+          tags:
+            - Lyon
+            - Velov
+      - name: table4
+        identifier: table4
+        config:
+          tags:
+            
