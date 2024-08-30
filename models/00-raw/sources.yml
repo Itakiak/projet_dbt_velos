@@ -6,24 +6,53 @@ sources:
     schema: raw_data
     description: Sources brutes des données
     tables:
-      - name: amenagements_cyclables
-        identifier: amenagements_cyclables
-        config:
-          tags:
-      - name: bornes_velibs_paris
-        identifier: bornes_velibs_paris
+      - name: amenagements_cyclables_paris
+        identifier: amenagements_cyclables_paris
         config:
           tags:
             - Paris
-            - Velib
+            - Pistes_cyclables
+      - name: bornes_velib_paris
+        identifier: bornes_velib_paris
+        config:
+          tags:
+            - Paris
+            - Stations_vls
       - name: bornes_velov_lyon
         identifier: bornes_velov_lyon
         config:
           tags:
             - Lyon
-            - Velov
-      - name: table4
-        identifier: table4
+            - Stations_vls
+      - name: data_meteo_lyon
+        identifier: data_meteo_lyon
         config:
           tags:
+            - Lyon
+            - Meteo
+      - name: data_meteo_paris
+        identifier: data_meteo_paris
+        config:
+          tags:
+            - Lyon
+            - Meteo
+      - name: operateurs_velo_paris_lyon
+        identifier: operateurs_velo_paris_lyon
+        config:
+          tags:
+            - Paris
+            - Lyon
+            - Operateurs
+      - name: stationnement_velo_idf
+        identifier: stationnement_velo_idf
+        config:
+          tags:
+            - Paris
+            - Stationnement
+      - name: stationnement_velo_lyon
+        identifier: stationnement_velo_lyon
+        config:
+          tags:
+            - Lyon
+            - Stationnement
             
