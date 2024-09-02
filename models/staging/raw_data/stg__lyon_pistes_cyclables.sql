@@ -9,13 +9,30 @@ source as (
 renamed as (
 
     select
-        name,
-        arrondissement,
-        idpdc,
-        longitude,
-        latitude,
-        attribute,
-        value
+        id,
+        nom,
+        commune1,
+        insee1,
+        commune2,
+        insee2,
+        reseau,
+        financementac,
+        typeamenagement,
+        typeamenagement2,
+        positionnement,
+        senscirculation,
+        environnement,
+        localisation,
+        typologiepiste,
+        revetementpiste,
+        domanialite,
+        reglementation,
+        zonecirculationapaisee,
+        anneelivraison,
+        longueur,
+        observation,
+        gid,
+        geometry
 
     from source
 
