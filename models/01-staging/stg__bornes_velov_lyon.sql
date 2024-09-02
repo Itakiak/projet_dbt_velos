@@ -9,9 +9,7 @@ source as (
 renamed as (
 
     select
-        id,
-        arrondissement,
-        bike_stands,
+        id as station_id,
         coordinates
 
     from source
