@@ -9,11 +9,11 @@ source as (
 renamed as (
 
     select
-        id_compteur,
+        date as annee_mois,
+        cast(id_compteur as INT64) as id_compteur,
         nom_compteur,
-        date,
         lat_long,
-        comptage
+        comptage as velos_count
 
     from source
 

@@ -9,15 +9,15 @@ source as (
 renamed as (
 
     select
+        FORMAT_DATE('%Y-%m', annee_mois) AS annee_mois,
         id_compteur,
         nom_compteur,
         arr,
-        lat,
-        long,
-        annee_mois,
-        comptage
-
+        concat(lat,',',long) as lat_long,      
+        cast(comptage as int64) as velos_count
+    
     from source
+    Where STARTS_WITH(arr, "Lyon")
 
 )
 
