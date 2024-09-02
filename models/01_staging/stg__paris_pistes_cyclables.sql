@@ -16,7 +16,6 @@ renamed as (
         arrondissement,
         voie_a_sens_unique,
         date_export,
-        source,
         st_length_shape,
         geo_shape_type,
         geo_shape_geometry_coordinates,
