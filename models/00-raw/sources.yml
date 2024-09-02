@@ -6,12 +6,6 @@ sources:
     schema: raw_data
     description: Sources brutes des données
     tables:
-      - name: amenagements_cyclables_paris
-        identifier: amenagements_cyclables_paris
-        config:
-          tags:
-            - Paris
-            - Pistes_cyclables
       - name: bornes_velib_paris
         identifier: bornes_velib_paris
         config:
@@ -55,4 +49,28 @@ sources:
           tags:
             - Lyon
             - Stationnement
+      - name: compteurs_lyon
+        identifier: compteurs_lyon
+        config:
+          tags:
+            - Lyon
+            - Compteur
+      - name: compteurs_paris
+        identifier: compteurs_paris
+        config:
+          tags:
+            - Paris
+            - Compteur
+      - name: paris_pistes_cyclables
+        identifier: paris_pistes_cyclables
+        config:
+          tags:
+            - Paris
+            - Pistes_cyclables
+      - name: lyon_pistes_cyclables
+        identifier: lyon_pistes_cyclables
+        config:
+          tags:
+            - Lyon
+            - Pistes_cyclables
             
