@@ -9,7 +9,7 @@ source as (
 renamed as (
 
     select
-        FORMAT_DATE('%Y-%m', annee_mois) AS annee_mois,
+        FORMAT_DATE('%Y-%m', annee_mois) AS compt_date_YM,
         id_compteur,
         nom_compteur,
         arr,
@@ -18,6 +18,7 @@ renamed as (
     
     from source
     Where STARTS_WITH(arr, "Lyon")
+    ORDER BY compt_date_YM, id_compteur
 
 )
 
