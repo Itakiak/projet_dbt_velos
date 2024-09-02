@@ -5,7 +5,7 @@ with
     renamed as (
 
         select
-            parse_date('%F', date) as date,
+            parse_date('%F', date) as meteo_date,
             windspeed_max_kmh,
             precip_total_day_mm,
             heatindex_max_c,

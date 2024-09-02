@@ -5,7 +5,7 @@ with
     renamed as (
 
         select
-            date,
+            date as meteo_date,
             windspeed_max_kmh,
             precip_total_day_mm,
             heatindex_max_c,
