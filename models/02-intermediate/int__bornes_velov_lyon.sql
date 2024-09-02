@@ -1,0 +1,1 @@
+select * from {{ ref('stg__bornes_velov_lyon')}}
