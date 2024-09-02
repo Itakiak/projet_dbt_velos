@@ -45,5 +45,13 @@ models:
         - "raw"
       +docs:
         node_color: "Black"
-    staging:
+    01_staging:
+      materialized: view
+      schema: 01_staging
+      path: "01_staging"
+      +tags: 
+        - "stagging"
+      +docs:
+        node_color: "Black"
+    02-intermediate:
       materialized: view
