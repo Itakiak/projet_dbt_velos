@@ -6,12 +6,13 @@ with
 
         select
             compt_date_ym,
+            arr,
             cast(
                 round(sum(velos_count) / count(distinct id_compteur)) as int64
             ) as avg_compt
 
         from source
-        group by compt_date_ym
+        group by arr, compt_date_YM
 
     )
 

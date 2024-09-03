@@ -19,7 +19,7 @@ source_joined as (
         concat(lat,',',lon) as station_latlong
 
     FROM source_station s
-    JOIN source_compteurs c ON c.compt_date_YM = s.meteo_date_YM
+    INNER JOIN source_compteurs c ON c.compt_date_YM = s.meteo_date_YM
 
     where STARTS_WITH(station_ville, "Lyon")
 
