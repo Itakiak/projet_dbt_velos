@@ -10,17 +10,17 @@ renamed as (
 
     select
         geo_point,
-        geo_shape,
-        osm_id,
+        geo_shape as station_coord,
+        osm_id as station_id,
         couvert,
-        capacite,
+        capacite as station_capacite,
         nom,
         acces,
         payant,
         surveille,
-        type,
+        type as station_type,
         insee_com,
-        nom_com,
+        nom_com as station_ville,
         date_modif,
         notes
 
