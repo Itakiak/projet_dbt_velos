@@ -21,7 +21,7 @@ joined_data AS (
         m.avg_temp,
         m.avg_windchill
     FROM source_compteurs c
-    JOIN source_meteo m ON c.compt_date_YM = m.meteo_date_YM
+    INNER JOIN source_meteo m ON c.compt_date_YM = m.meteo_date_YM
 )
 
 SELECT *

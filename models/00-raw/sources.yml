@@ -73,4 +73,9 @@ sources:
           tags:
             - Lyon
             - Pistes_cyclables
-            
+      - name: altitude_arr_lyon
+        identifier: altitude_arr_lyon
+        config:
+          tags:
+            - Lyon
+            - Altitude            
