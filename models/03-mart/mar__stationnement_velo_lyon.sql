@@ -1,20 +1,24 @@
-with
-    source_station as (select * from {{ ref("int__stationnement_velo_lyon") }}),
+with 
 
-    stationnement as (
+source as (
 
-        select
-            station_id,
-            station_ville,
-            station_type,
-            station_loc,
-            station_capacite,
-            station_annee_rea,
-            station_latlong
+    select * from {{ ref('int__stationnement_velo_paris') }}
 
-        from source_station
+),
 
-    )
+renamed as (
 
-select *
-from stationnement
+    select
+        station_id,
+        station_ville,
+        station_type,
+        station_capacite,
+        station_latlong
+
+
+    from source
+
+
+)
+
+select * from renamed
