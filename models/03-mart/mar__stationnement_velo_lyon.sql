@@ -1,28 +1,20 @@
-WITH source_station AS (
-    SELECT * FROM {{ ref('stg__stationnement_velo_lyon') }}
-),
+with
+    source_station as (select * from {{ ref("int__stationnement_velo_lyon") }}),
 
-source_compteurs AS (
-    SELECT * FROM {{ ref('stg__compteurs_lyon') }}
-),
+    stationnement as (
 
+        select
+            station_id,
+            station_ville,
+            station_type,
+            station_loc,
+            station_capacite,
+            station_annee_rea,
+            station_latlong
 
-source_joined as (
+        from source_station
 
-    select
-        station_id,
-        station_ville,
-        station_type,
-        station_loc,
-        station_capacite,
-        station_annee_rea,
-        concat(lat,',',lon) as station_latlong
+    )
 
-    FROM source_station s
-    JOIN source_compteurs c ON c.compt_date_YM = s.meteo_date_YM
-
-    where STARTS_WITH(station_ville, "Lyon")
-
-)
-
-select * from sources_joined
+select *
+from stationnement
