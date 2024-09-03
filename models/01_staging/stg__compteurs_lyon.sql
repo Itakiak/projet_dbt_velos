@@ -12,7 +12,7 @@ renamed as (
         FORMAT_DATE('%Y-%m', annee_mois) AS compt_date_YM,
         id_compteur,
         nom_compteur,
-        arr,
+        LEFT(arr, 6) as arr,
         concat(lat,',',long) as lat_long,      
         cast(comptage as int64) as velos_count
     

@@ -18,7 +18,6 @@ renamed as (
         velos_count
     
     from source
-    Where STARTS_WITH(arr, "Lyon")
     ORDER BY compt_date_YM, id_compteur
 
 )
