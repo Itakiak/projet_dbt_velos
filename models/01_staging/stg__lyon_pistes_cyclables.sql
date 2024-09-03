@@ -13,7 +13,7 @@ renamed as (
         commune1 AS commune,
         typeamenagement AS amenagement,
         senscirculation,
-        anneelivraison,
+        parse_date('%Y', CAST(cast(anneelivraison as int64) AS STRING)) AS livraison_date,
         longueur,
         gid,
         geometry
