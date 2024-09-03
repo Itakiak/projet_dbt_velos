@@ -10,6 +10,7 @@ renamed as (
 
     select
         id as station_id,
+        concat('Lyon ', substr(arrondissement, 1, 1)) as arrondissement,
         coordinates
 
     from source

@@ -40,7 +40,7 @@ models:
     00_raw:
       materialized: view
       schema: 00_raw
-      path: "00_raw"
+      path: "00-raw"
       +tags: 
         - "raw"
       +docs:
@@ -48,7 +48,7 @@ models:
     01_staging:
       materialized: view
       schema: 01_staging
-      path: "01_staging"
+      path: "01-staging"
       +tags: 
         - "stagging"
       +docs:
