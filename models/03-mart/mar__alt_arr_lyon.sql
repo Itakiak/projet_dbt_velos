@@ -7,6 +7,10 @@ source_compteurs AS (
     SELECT * FROM {{ ref('int__compteurs_annee_mois_lyon') }}
 ),
 
+source_velov AS (
+    SELECT count(station_id) as nb_station_velov, arrondissement FROM {{ ref('stg__bornes_velov_lyon') }} GROUP BY arrondissement
+),
+
 joined_data AS (
     SELECT
         PARSE_DATE('%Y-%m', compt_date_ym) AS compt_date_ym,
@@ -14,11 +18,13 @@ joined_data AS (
         alt_moy,
         alt_class,
         alt_cat,
-        c.avg_compt
+        c.avg_compt,
+        nb_station_velov
 
 
     FROM source_alt a
     INNER JOIN source_compteurs c ON c.arr = a.arr_id
+    INNER JOIN source_velov v ON c.arr = v.arrondissement
 )
 
 SELECT *
