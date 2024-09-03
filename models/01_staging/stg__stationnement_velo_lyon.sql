@@ -21,7 +21,7 @@ renamed as (
         duree,
         nbarceaux,
         cast(capacite as int64) as station_capacite,
-        cast(anneerealisation as int64) as station_annee_rea,
+        parse_date('%Y', cast(cast(anneerealisation as int64) as STRING)) as station_annee_rea,
         arceauxprojetes,
         pole,
         validite,

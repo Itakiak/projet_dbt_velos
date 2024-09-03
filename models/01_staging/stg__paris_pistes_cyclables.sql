@@ -15,7 +15,7 @@ renamed as (
         sens,
         arrondissement,
         voie_a_sens_unique,
-        date_export,
+        FORMAT_DATE('%Y-%m-%d', PARSE_TIMESTAMP('%Y-%m-%dT%H:%M:%S%Ez', date_export)) AS date_export,
         st_length_shape,
         geo_shape_type,
         geo_shape_geometry_coordinates,

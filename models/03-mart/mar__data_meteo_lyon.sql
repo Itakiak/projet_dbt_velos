@@ -8,7 +8,6 @@ source_compteurs AS (
 
 joined_data AS (
     SELECT
-        c.compt_date_YM,
         c.id_compteur,
         c.nom_compteur,
         c.arr,

@@ -8,12 +8,11 @@ source_compteurs AS (
 
 joined_data AS (
     SELECT
-        c.compt_date_YM,
         c.id_compteur,
         c.nom_compteur,
         c.lat_long,
         c.velos_count,
-        m.meteo_date_YM,
+        meteo_date_YM,
         m.avg_windspd_kmh,
         m.avg_precip_mm,
         m.avg_heatindex,
