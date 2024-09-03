@@ -9,7 +9,7 @@ source as (
 renamed as (
 
     select
-        FORMAT_DATE('%Y-%m', annee_mois) AS compt_date_YM,
+        annee_mois AS compt_date_YM,
         id_compteur,
         nom_compteur,
         LEFT(arr, 6) as arr,

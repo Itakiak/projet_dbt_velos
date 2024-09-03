@@ -5,7 +5,7 @@ with
     renamed as (
 
         select
-            date,
+            format_date('%Y-%m',date) AS meteo_date_YM,
             windspeed_max_kmh,
             precip_total_day_mm,
             heatindex_max_c,

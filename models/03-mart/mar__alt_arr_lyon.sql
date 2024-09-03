@@ -13,7 +13,7 @@ source_velov AS (
 
 joined_data AS (
     SELECT
-        compt_date_ym,
+        PARSE_DATE('%Y-%m', compt_date_ym) AS compt_date_ym,
         a.arr_id,
         alt_moy,
         alt_class,

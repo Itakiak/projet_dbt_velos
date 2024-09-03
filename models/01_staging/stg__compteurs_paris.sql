@@ -9,7 +9,7 @@ source as (
 renamed as (
 
     select
-        date as compt_date_YM,
+        parse_date('%Y-%m', date) as compt_date_YM,
         cast(id_compteur as INT64) as id_compteur,
         nom_compteur,
         lat_long,
