@@ -10,7 +10,7 @@ with
             station_type,
             station_loc,
             station_capacite,
-            extract(year from station_annee_rea) as station_annee_rea,
+            station_annee_rea,
             concat(lat, ',', lon) as station_latlong
         from source
         where starts_with(station_ville, "Lyon")
