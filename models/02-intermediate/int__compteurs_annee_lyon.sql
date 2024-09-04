@@ -5,7 +5,7 @@ with
     compteurs_annee as (
 
         select
-            format_date('%Y', compt_date_ym) as compt_year,
+            DATE_TRUNC(compt_date_ym, YEAR) as compt_year,
             cast(
                 round(sum(velos_count) / count(distinct id_compteur)) as int64
             ) as avg_compt

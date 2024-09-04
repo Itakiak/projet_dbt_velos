@@ -5,7 +5,7 @@ with
     renamed as (
 
         select
-            format_date('%Y-%m', meteo_date) as meteo_date_YM,
+            DATE_TRUNC(meteo_date, MONTH) as meteo_date_YM,
             round(avg(windspeed_max_kmh), 2) as avg_windspd_kmh,
             round(avg(precip_total_day_mm), 2) as avg_precip_mm,
             round(avg(heatindex_max_c), 2) as avg_heatindex,

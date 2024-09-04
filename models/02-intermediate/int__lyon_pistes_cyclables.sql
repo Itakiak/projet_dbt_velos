@@ -7,7 +7,7 @@ with
             commune,
             amenagement,
             senscirculation,
-            format_date('%Y', livraison_date) as livraison_year,
+            livraison_date as livraison_year,
             longueur,
             gid,
             geometry
