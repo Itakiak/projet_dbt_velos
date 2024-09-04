@@ -4,7 +4,7 @@ with
 
     renamed as (
 
-        select format_date('%Y-%m', compt_date_ym) as compt_date_ym, id_compteur, nom_compteur, lat_long, velos_count
+        select compt_date_ym, id_compteur, nom_compteur, lat_long, velos_count
 
         from source
         order by compt_date_ym, id_compteur
