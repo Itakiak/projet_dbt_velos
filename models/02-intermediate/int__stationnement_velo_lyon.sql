@@ -1,24 +1,21 @@
-with 
+with
 
-source as (
+    source as (select * from {{ ref("stg__stationnement_velo_lyon") }}),
 
-    select * from {{ ref('stg__stationnement_velo_lyon') }}
+    renamed as (
 
-),
+        select
+            station_id,
+            station_ville,
+            station_type,
+            station_loc,
+            station_capacite,
+            extract(year from station_annee_rea) as station_annee_rea,
+            concat(lat, ',', lon) as station_latlong
+        from source
+        where starts_with(station_ville, "Lyon")
 
-renamed as (
+    )
 
-    select
-        station_id,
-        station_ville,
-        station_type,
-        station_loc,
-        station_capacite,
-        station_annee_rea,
-        concat(lat,',',lon) as station_latlong
-    from source
-    where STARTS_WITH(station_ville, "Lyon")
-
-)
-
-select * from renamed
+select *
+from renamed

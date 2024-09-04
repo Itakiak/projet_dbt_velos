@@ -5,14 +5,14 @@ with
     compteurs_annee_mois as (
 
         select
-            compt_date_ym,
+            format_date('%Y-%m', compt_date_ym) as compt_date_ym,
             arr,
             cast(
                 round(sum(velos_count) / count(distinct id_compteur)) as int64
             ) as avg_compt
 
         from source
-        group by arr, compt_date_YM
+        group by arr, compt_date_ym
 
     )
 
