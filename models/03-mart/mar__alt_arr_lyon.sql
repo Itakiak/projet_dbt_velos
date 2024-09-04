@@ -1,32 +1,29 @@
-WITH source_alt AS (
-    SELECT * FROM {{ ref('stg__altitude_arr_lyon') }}
+with
+    source_alt as (select * from {{ ref("stg__altitude_arr_lyon") }}),
 
-),
+    source_compteurs as (select * from {{ ref("int__compteurs_annee_mois_lyon") }}),
 
-source_compteurs AS (
-    SELECT * FROM {{ ref('int__compteurs_annee_mois_lyon') }}
-),
+    source_velov as (
+        select count(station_id) as nb_station_velov, arrondissement
+        from {{ ref("stg__bornes_velov_lyon") }}
+        group by arrondissement
+    ),
 
-source_velov AS (
-    SELECT count(station_id) as nb_station_velov, arrondissement FROM {{ ref('stg__bornes_velov_lyon') }} GROUP BY arrondissement
-),
+    joined_data as (
+        select
+            c.compt_date_ym,
+            a.arr_id,
+            alt_moy,
+            alt_class,
+            alt_cat,
+            c.avg_compt as bikes_avg_count,
+            nb_station_velov
 
-joined_data AS (
-    SELECT
-        PARSE_DATE('%Y-%m', compt_date_ym) AS compt_date_ym,
-        a.arr_id,
-        alt_moy,
-        alt_class,
-        alt_cat,
-        c.avg_compt,
-        nb_station_velov
+        from source_alt a
+        inner join source_compteurs c on c.arr = a.arr_id
+        inner join source_velov v on c.arr = v.arrondissement
+    )
 
-
-    FROM source_alt a
-    INNER JOIN source_compteurs c ON c.arr = a.arr_id
-    INNER JOIN source_velov v ON c.arr = v.arrondissement
-)
-
-SELECT *
-FROM joined_data
-ORDER BY compt_date_YM, arr_id
+select *
+from joined_data
+order by compt_date_ym, arr_id

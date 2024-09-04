@@ -52,8 +52,20 @@ models:
       +tags: 
         - "stagging"
       +docs:
-        node_color: "Black"
+        node_color: "Gray"
     02-intermediate:
       materialized: view
+      schema: 02_intermediate
+      path: "02-intermediate"
+      +tags: 
+        - "intermediate"
+      +docs:
+        node_color: "Yellow"
     03-mart:
       materialized: table
+      schema: 03_mart
+      path: "03-mart"
+      +tags: 
+        - "mart"
+      +docs:
+        node_color: "Green"

@@ -1,23 +1,15 @@
-with 
+with
 
-source as (
+    source as (select * from {{ ref("stg__compteurs_paris") }}),
 
-    select * from {{ ref('stg__compteurs_paris') }}
+    renamed as (
 
-),
+        select format_date('%Y-%m', compt_date_ym) as compt_date_ym, id_compteur, nom_compteur, lat_long, velos_count
 
-renamed as (
+        from source
+        order by compt_date_ym, id_compteur
 
-    select
-        compt_date_YM,
-        id_compteur,
-        nom_compteur,
-        lat_long,
-        velos_count
+    )
 
-    from source
-    ORDER BY compt_date_YM, id_compteur
-
-)
-
-select * from renamed
+select *
+from renamed
