@@ -79,3 +79,9 @@ sources:
           tags:
             - Lyon
             - Altitude            
+      - name: entreprises_lyon
+        identifier: entreprises_lyon
+        config:
+          tags:
+            - Lyon
+            - Entreprises    
