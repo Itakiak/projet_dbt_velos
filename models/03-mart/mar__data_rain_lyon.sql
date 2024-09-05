@@ -23,8 +23,6 @@ with
         select gp.meteo_date_ym, gp.nb_rainy_day, c.avg_compt as bikes_avg_count,
         from source_compteurs c
         join grouped_rain gp on c.compt_date_ym = gp.meteo_date_ym
-
-    -- nb de jours de pluie
     )
 
 select *
