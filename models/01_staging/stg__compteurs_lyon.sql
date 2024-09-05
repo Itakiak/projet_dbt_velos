@@ -17,7 +17,7 @@ renamed as (
         cast(comptage as int64) as velos_count
     
     from source
-    Where STARTS_WITH(arr, "Lyon")
+    Where STARTS_WITH(arr, "Lyon") and cast(comptage as int64) is not null
     ORDER BY compt_date_YM, id_compteur
 
 )
