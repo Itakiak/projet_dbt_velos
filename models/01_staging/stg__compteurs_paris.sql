@@ -12,6 +12,7 @@ with
             cast(comptage as int64) as velos_count
 
         from source
+        where cast(comptage as int64) > 0
         order by compt_date_ym, id_compteur
 
     )
