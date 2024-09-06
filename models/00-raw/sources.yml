@@ -85,3 +85,9 @@ sources:
           tags:
             - Lyon
             - Entreprises    
+      - name: tourisme
+        identifier: tourisme
+        config:
+          tags:
+            - Lyon
+            - Tourisme    
