@@ -30,7 +30,7 @@ with
             pc.geometry,
             c.avg_compt
         from pistes_cyclables as pc
-        join compteurs as c on pc.livraison_year = c.compt_year
+        LEFT JOIN compteurs as c on pc.livraison_year = c.compt_year
     )
 
 select *
